@@ -9,7 +9,7 @@ from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
 
-export_file_url = 'https://drive.google.com/open?id=1DDrq_8ADUFJztIJoevAROTNTUvNF3SRb'
+export_file_url = 'https://www.dropbox.com/s/9m2a672t6gf0ech/stage-2.pth?dl=0'
 export_file_name = 'stage-2.pth'
 
 classes = ['palm','l','fist','fist_moved','thumb','index','ok','palm_moved','c','down']
