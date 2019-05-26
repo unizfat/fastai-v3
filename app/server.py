@@ -10,7 +10,7 @@ from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
 
 export_file_url = 'https://www.dropbox.com/s/9m2a672t6gf0ech/stage-2.pth?dl=0'
-export_file_name = 'stage-2.pth'
+export_file_name = 'export.pkl'
 
 classes = ['palm','l','fist','fist_moved','thumb','index','ok','palm_moved','c','down']
 path = Path(__file__).parent
