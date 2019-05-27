@@ -59,7 +59,7 @@ async def setup_learner(model_file_url, model_file_name):
 
 
 loop = asyncio.get_event_loop()
-tasks = [asyncio.ensure_future(setup_learner(model_file_url, model_file_name))]
+tasks = [asyncio.ensure_future(setup_learner(export_file_url, export_file_name))]
 learn = loop.run_until_complete(asyncio.gather(*tasks))[0]
 loop.close()
 
