@@ -8,6 +8,7 @@ from starlette.applications import Starlette
 from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
+import cv2
 
 export_file_url = 'https://www.dropbox.com/s/upke6l8e6w05m61/deaf-language.pkl?dl=1'
 export_file_name = 'deaf-language.pkl'
