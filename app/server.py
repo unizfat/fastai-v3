@@ -8,7 +8,6 @@ from starlette.applications import Starlette
 from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
-import cv2
 
 export_file_url = 'https://www.dropbox.com/s/upke6l8e6w05m61/deaf-language.pkl?dl=1'
 export_file_name = 'deaf-language.pkl'
@@ -73,9 +72,12 @@ async def homepage(request):
 
 @app.route('/analyze', methods=['POST'])
 async def analyze(request):
-    data = await request.form()
-    img_bytes = await (data['file'].read())
-    image = cv2.imdecode(np.fromstring(img_bytes, np.uint8), 1)
+    img_data = await request.form()
+    img_bytes = await (img_data['file'].read())
+    img = open_image(BytesIO(img_bytes))
+    prediction = learn.predict(img)[0]
+    return JSONResponse({'result': str(prediction)})
+
 
 if __name__ == '__main__':
     if 'serve' in sys.argv:
